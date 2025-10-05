@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 1 Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .quiz-container {
+      text-align: center;
+      padding-top: 100px;
+      background: linear-gradient(#0a0a1a, #222244);
+      height: 100vh;
+      color: white;
+    }
+
+    .quiz-option {
+      margin: 10px;
+      padding: 10px 20px;
+      background: #3498db;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .quiz-option:hover {
+      background: #2980b9;
+    }
+
+    .finish-btn {
+      display: none;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #4ade80, #16a34a);
+      border: none;
+      border-radius: 12px;
+      color: black;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>🧠 Level 1 Quiz</h1>
+  <p>What number comes after 9?</p>
+
+  <button class="quiz-option" onclick="checkAnswer('wrong')">8</button>
+  <button class="quiz-option" onclick="checkAnswer('correct')">10</button>
+  <button class="quiz-option" onclick="checkAnswer('wrong')">7</button>
+
+  <br>
+  <button class="finish-btn" id="finishBtn" onclick="completeLevel(1)">✅ Finish Level</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+function checkAnswer(choice) {
+  if (choice === 'correct') {
+    alert('🎉 Correct Answer!');
+    document.getElementById('finishBtn').style.display = 'inline-block';
+  } else {
+    alert('❌ Try Again!');
+  }
+}
+</script>
+
+</body>
+</html>

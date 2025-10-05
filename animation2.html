@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Burst</title>
+  <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+  
+       
+  
+  <div id="animationArea">
+    <video id="levelAnimation" autoplay muted>
+      <source src="0001-2000.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div id="quizSection" class="hidden">
+    <div class="quiz-container">
+      <h2>🧠 Quiz Time!</h2>
+      <p id="questionText"></p>
+      <div class="options" id="optionsContainer"></div>
+      <button id="nextBtn" class="hidden">Next Question ➡️</button>
+    </div>
+  </div>
+
+  <audio id="background-sound" autoplay loop muted>
+  <source src="What a solar storm sounds like.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  window.addEventListener("load", () => {
+    const sound = document.getElementById("background-sound");
+    sound.muted = false; // unmute after autoplay starts
+    sound.play().catch(err => console.log("Autoplay blocked:", err));
+  });
+</script>
+
+
+  <script src="animation.js"></script>
+</body>
+</html>
